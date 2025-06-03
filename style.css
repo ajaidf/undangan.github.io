@@ -1,6 +1,6 @@
 :root {
   --pink: #55ad9b;
-  --bg: #95d2b3;
+  --bg:rgb(0, 0, 0);
   --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
 }
 
@@ -87,7 +87,7 @@ backdrop-filter: blur(4px);
 .home h3{
   color: #444;
   font-size: 1.5rem;
-  margin-buttom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .home p{
@@ -112,21 +112,58 @@ backdrop-filter: blur(4px);
 .home .heart{
 width: 50px;
 height: 50px;
-background-color: red;
+background-color: white;
 display: flex;
 border-radius: 50%;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+position: absolute;
+left: 50%;
+transform: translateX(-50%) translateY(50px);
 }
 
 .home .heart i{
   margin: auto;
-
+  color: var(--pink);
 }
+
+.info{
+  background-color: var(--bg);
+  color: white;
+  padding-top:10rem;
+  padding-bottom: 8rem;
+}
+
+.info h2{
+  color: var(--pink);
+  font-family: "Dancing Script", cursive;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.info .alamat{
+  font-size: 1.1rem;
+}
+
+.info .description{
+  font-size: 1rem;
+  font-weight: 300;
+}
+
 /* media query */
+/* Extra Large */
+@media (max-width: 992px){
+  .home .heart{
+    transform: translateX(-50%) translateY(30px);
+  }
+}
 /* Laptop */
 @media (max-width: 992px){
   html{
     font-size: 75%;
   }
+
+  .home .heart{
+    display: none;
 }
 /* tablet */
 @media (max-width: 768px){
