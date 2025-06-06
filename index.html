@@ -26,7 +26,7 @@
         <h1>Ajai Darman Fauji & Endah</h1>
         <p>Akan Melangsungkan Pernikahan dalam:</p>
         <div class="countdown simply-countdown"></div>
-        <a href="#undangan" class="btn btn-lg mt-4">Lihat Undangan</a>
+        <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
       </main>
     </section>
     <nav class="navbar bg-transparent navbar-expand-md sticky-top mynavbar">
@@ -107,6 +107,7 @@
                   Ibu
                 </p>
               </div>
+              <audio src="music/wedding-ceremony-music-romantic-love-sentimental-piano-background-277973.mp3" type="audio/mp3" autoplay loop></audio>
             </div>
           </div>
         </div>
@@ -301,6 +302,30 @@
       offcanvas.addEventListener('hidden.bs.offcanvas', function () {
         stickyTop.style.overflow = 'hidden';
       });
+    </script>
+    <script>
+            const rootElement = document.querySelector(":root");
+            function disableScroll(){
+              scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+              scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+              window.onscroll = function (){
+                window.scrollTo(scrollTop, scrollLeft);
+              }
+
+                 rootElement.style.scrollBehavior = 'auto';
+              }
+
+                function enableScroll(){
+                  window.onscroll = function (){ }
+                  rootElement.style.scrollBehavior = 'smooth';
+                  localStorage.setItem('opened', 'true');
+                }
+
+
+      if(!localStorage.getItem('opened')){
+        disableScroll();
+      }
     </script>
   </body>
 </html>
