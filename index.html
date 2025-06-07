@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ajai & Endah</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,8 +25,9 @@
   <body>
     <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
       <main>
+        <div id="app"></div>
         <h4>Kepada Bapak/Ibu/Saudara/i</h4>
-        <h1>Ajai Darman Fauji & Endah</h1>
+        <h1 class="animate__animated animate__fadeIn">Ajai Darman Fauji & Endah</h1>
         <p>Akan Melangsungkan Pernikahan dalam:</p>
         <div class="countdown simply-countdown"></div>
         <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
@@ -269,6 +273,99 @@
         </div>
       </div>
     </section>
+    <section id="rsvp" class="rsvp">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2>Konfirmasi Kehadiran</h2>
+            <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran.</p>
+          </div>
+        </div>
+        <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST" action="https://script.google.com/macros/s/AKfycbxQZNgFiUvMD3oAe7Z78hFrKvxuaOKv7Iln9s7ubnMirGtJ3BziRvXqKba8YMKWAF9y9g/exec" id="my-form">
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" name="nama" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="jumlah" class="form-label">Jumlah</label>
+              <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1" />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="status" class="form-label">Konfirmasi</label>
+              <select type="number" class="form-select" id="status" name="status" min="1" max="5" length="1" value="1">
+                <option selected>Pilih salah satu</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak hadir">Tidak Hadir</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12" style="margin-top: 33px;">
+            <button class="btn btn-primary">Kirim</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="gifts" class="gifts">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <span>ungkapan tanda kasih</span>
+            <h2>Kirim Hadiah Pernikahan</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet rerum maiores sapiente illum similique provident.</p>
+          </div>
+        </div>
+        <div class="row justify-content-center text-center">
+          <div class="col-md-6">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="fw-bold">MANDIRI</div>
+                12314322343 - Ajai Darman Fauji
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">BPD KALTIMTARA</div>
+                12314322343 - Ajai Darman Fauji
+              </li>
+              <li class="list-group-item">
+                <div class="fw-bold">GOPAY</div>
+                <img src="img/IMG_20250607_091115.jpg" alt="gopay qr" class="img-thumbnail" width="150" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <small class="block">&Copy; 2025 Dino Weding. All Right Reserved.</small>
+            <small class="block">Design By <a href="https://instagram.com/ajaidf">@ajaidf</a></small>
+
+            <ul class="mt-3">
+              <li>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="bi bi-tiktok"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
     <script>
@@ -326,6 +423,39 @@
       if(!localStorage.getItem('opened')){
         disableScroll();
       }
+    </script>
+
+    <!-- Scirp loading -->
+    <script>
+      onload = function(){
+        let id = document.getElementById("app")
+        let loading = document.createElement("div")
+
+        loading.textContent = "Loading"
+        loading.style.fontSize = "28px"
+        id.appendChild(loading)
+
+        setTimeout(() => {
+          loading.textContent= "SELAMAT DATANG DIUNDANGAN PERNIKAHAN KAMI"
+        }, 4000)
+      }
+    </script>
+    <script>
+            window.addEventListener("load", function() {
+        const form = document.getElementById('my-form');
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          const action = e.target.action;
+          fetch(action, {
+            method: 'POST',
+            body: data,
+          })
+          .then(() => {
+            alert("Konfirmasi kehadiran berhasil terkirim!");
+          })
+        });
+      });
     </script>
   </body>
 </html>
